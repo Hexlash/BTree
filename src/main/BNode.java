@@ -2,16 +2,26 @@ package main;
 
 import java.util.ArrayList;
 
-
-public class BNode{
+/**
+ * A B-Tree node
+ */
+public class BNode {
+	// List of keys
 	public ArrayList<Integer> keys;
+	// List of pointers to this node's children
 	public ArrayList<BNode> children;
-	public int numKeys;
+	// This node's parent
 	public BNode parent;
-	
+	// This node's depth
+	public int depth;
+
+	/**
+	 * Create a new B-tree node
+	 * 
+	 * @param parent
+	 */
 	public BNode(BNode parent) {
 		this.parent = parent;
-		numKeys = 0;
 		keys = new ArrayList<Integer>(5);
 		children = new ArrayList<BNode>(5);
 	}
